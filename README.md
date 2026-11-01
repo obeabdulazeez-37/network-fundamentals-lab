@@ -8,7 +8,7 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 | # | Topic | Posted |
 |---|-------|--------|
 | Roadmap | How this started | Nov 1 |
-| 1 | Two PCs and a Switch | Nov 4 |
+| 1 | Two PCs and a Switch | Coming Nov 4 |
 
 ## Contents
 - roadmap: sketch board, Packet Tracer versions, lab screenshot and topology
