@@ -16,5 +16,6 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 - roadmap: sketch board, Packet Tracer versions, lab screenshot and topology
 - lesson-01: Two PCs and a Switch
 - lesson-02: Two networks, no connection
+- lesson-03: A router between two networks
 
 Tools: VMware Workstation, Kali Linux, Windows 11, Wazuh, Cisco Packet Tracer.
