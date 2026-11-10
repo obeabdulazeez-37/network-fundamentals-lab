@@ -10,7 +10,9 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 | Roadmap | How this started | Nov 1 |
 | 1 | Two PCs and a Switch | Nov 4 |
 | 2 | Two networks, No connection | Nov 7 |
-| 3 | Connecting Two Networks with a Router | Coming Nov 10 |
+| 3 | Connecting Two Networks with a Router | Nov 10 |
+| 4 | DHCP | Coming Nov 13 |
+
 
 ## Contents
 - roadmap: sketch board, Packet Tracer versions, lab screenshot and topology
