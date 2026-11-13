@@ -11,7 +11,9 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 | 1 | Two PCs and a Switch | Nov 4 |
 | 2 | Two networks, No connection | Nov 7 |
 | 3 | Connecting Two Networks with a Router | Nov 10 |
-| 4 | DHCP | Coming Nov 13 |
+| 4 | DHCP | Nov 13 |
+| 5 | NAT  | Coming Nov 19. I have a Mid-term on the 16th |
+
 
 
 ## Contents
@@ -19,5 +21,6 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 - lesson-01: Two PCs and a Switch
 - lesson-02: Two networks, no connection
 - lesson-03: A router between two networks
+- Lesson 4: DHCP on a Router, and What Happens When It Fails
 
 Tools: VMware Workstation, Kali Linux, Windows 11, Wazuh, Cisco Packet Tracer.
