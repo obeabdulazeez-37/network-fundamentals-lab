@@ -26,7 +26,7 @@ Lesson 5 changes direction. The topology is rebuilt smaller and simpler so the f
 - Because each subnet sits on its own router interface, `ip nat inside` can be set on one interface and left off the other. That makes it simple to show NAT applying to one subnet only.
 - A third interface, Gi0/2, is added as the outside link to the Internet-Server.
 
-![Starting topology with no internet](images/01-starting-topology-no-internet.png)
+![Starting topology with no internet](01-starting-topology-no-internet.png)
 
 *Starting topology, labelled with each device's address and port. R1 only has its two inside links. The internet side is not connected yet.*
 
@@ -47,11 +47,11 @@ Lesson 5 changes direction. The topology is rebuilt smaller and simpler so the f
 
 **Connect the server.** Add the Internet-Server and cable its Fa0 to R1 Gi0/2. The link shows red at first because the router interface is still shut down.
 
-![Internet-Server cabled to R1 Gi0/2 with the link still down](images/02-server-cabled-to-r1-gi0-2-link-down.png)
+![Internet-Server cabled to R1 Gi0/2 with the link still down](02-server-cabled-to-r1-gi0-2-link-down.png)
 
 **Give the server a static address.** IP 203.0.113.10, mask 255.255.255.0, gateway 203.0.113.1.
 
-![Internet-Server static IP configuration](images/03-internet-server-static-ip-config.png)
+![Internet-Server static IP configuration](03-internet-server-static-ip-config.png)
 
 **Configure R1.** Set up the outside interface, mark the inside interface, and add a default route.
 
@@ -79,7 +79,7 @@ What each part does:
 
 Confirm the link between R1 and the server is up. The link lights go from red to green.
 
-![All links up and green](images/04-all-links-up-green.png)
+![All links up and green](04-all-links-up-green.png)
 
 ## 3. Write the access list and the source list
 
@@ -97,24 +97,24 @@ What each part does:
 
 This access list does not block traffic. It only chooses which hosts get translated.
 
-![R1 NAT overload CLI configuration](images/05-r1-nat-overload-cli-config.png)
+![R1 NAT overload CLI configuration](05-r1-nat-overload-cli-config.png)
 
 ## 4. Run tests and confirmations
 
 **V8-PC1 (192.168.71.128) pings the Internet-Server.** All four replies come back, 0% loss, TTL 127 (the PC starts at 128 and loses one at R1).
 
-![V8-PC1 ping to the internet succeeds](images/06-v8-pc1-ping-internet-success.png)
+![V8-PC1 ping to the internet succeeds](06-v8-pc1-ping-internet-success.png)
 
 **V2-PC1 (192.168.50.10) pings the Internet-Server.** No replies, 100% loss. The 192.168.50.0/24 subnet is not in access list 1, so it gets no translation.
 
-![V2-PC1 ping to the internet fails](images/07-v2-pc1-ping-internet-fail.png)
+![V2-PC1 ping to the internet fails](07-v2-pc1-ping-internet-fail.png)
 
 **Checks on R1:**
 - `show ip nat translations` shows ICMP entries where inside local 192.168.71.129 becomes inside global 203.0.113.1, talking to outside address 203.0.113.10. Each entry has its own port number.
 - `show ip nat statistics` shows Gi0/2 as the outside interface and Gi0/1 as the inside interface, plus the hit, miss and expired counts.
 - `show ip route` shows the default route `S* 0.0.0.0/0 via 203.0.113.10` and the three connected networks.
 
-![R1 NAT statistics, translations and routing table](images/08-r1-nat-statistics-translations-and-route.png)
+![R1 NAT statistics, translations and routing table](08-r1-nat-statistics-translations-and-route.png)
 
 Translations expire quickly. Run `show ip nat translations` right after the ping, otherwise the table can be empty.
 
@@ -128,4 +128,4 @@ Translations expire quickly. Run `show ip nat translations` right after the ping
 
 ## Final topology
 
-![Final topology with NAT overload to the Internet-Server](images/09-final-topology-nat-overload.png)
+![Final topology with NAT overload to the Internet-Server](09-final-topology-nat-overload.png)
