@@ -13,7 +13,7 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 | 3 | Connecting Two Networks with a Router | Nov 10 |
 | 4 | DHCP | Nov 13 |
 | 5 | NAT Overload (PAT) | Nov 19 |
-| 5 | Connecting two routers, Point-to-Point links  | Coming Nov 22|
+| 6 | Connecting two routers, Point-to-Point links  | Nov 23 |
 
 
 
@@ -24,5 +24,5 @@ I built a VMware home lab, tried to map it, and found out I needed hands-on prac
 - lesson-03: A router between two networks
 - Lesson-04: DHCP on a Router, and What Happens When It Fails
 - Lesson-05: NAT Overload (PAT), giving a private network internet access
-
+- Lesson-06: Conneting two routers, point-to-point links
 Tools: VMware Workstation, Kali Linux, Windows 11, Wazuh, Cisco Packet Tracer.

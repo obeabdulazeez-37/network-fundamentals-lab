@@ -1,0 +1,33 @@
+PCA: 
+ipconfig
+ipv4: 192.168.10.10
+gateway: 192.168.10.1
+
+PCB:
+ipconfig
+ipv4: 192.168.20.10
+gateway: 192.168.20.1
+
+R1:
+enable
+configure terminal
+interface gi0/0
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+interface gi0/1
+ ip address 10.0.0.1 255.255.255.252
+ no shutdown
+exit
+ip route 192.168.20.0 255.255.255.0 10.0.0.2
+
+R2:
+enable
+configure terminal
+interface gi0/0
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+interface gi0/1
+ ip address 10.0.0.2 255.255.255.252
+ no shutdown
+exit
+ip route 192.168.10.0 255.255.255.0 10.0.0.1
